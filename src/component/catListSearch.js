@@ -149,7 +149,7 @@ const catList = (props) => {
                                             <RenderStar value={value.vocalisation} />
                                             </li>
                                         </ul>
-
+                                        <a href={value.wikipedia_url} target="_BLANK">Go to Wikipedia</a>
                                         </div>
                                     </Collapse>
                                 </div> 
