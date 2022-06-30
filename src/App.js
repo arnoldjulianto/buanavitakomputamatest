@@ -110,6 +110,10 @@ function App() {
     }
     await axios.get('https://api.thecatapi.com/v1/breeds/search', config)
     .then( (response) => {
+      if(response.length == 0 ){
+        setCatListSearch([]);
+      }
+      else{
         const data1 = [...imgConfig];
         response.data.forEach(() => {
           data1.push({ size : "12" ,ext : ".jpg"});
@@ -125,6 +129,7 @@ function App() {
         const newList = response.data;
         setCatListSearch(newList);
         setLoadingVisible(false);
+      }
     });
   }
 
